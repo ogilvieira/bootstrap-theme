@@ -1,0 +1,18 @@
+{#
+# Brands Menu
+# elements/snippets/brands_menu.html
+#}
+ 
+{% set brands = Brands() %}
+ 
+<nav class="brands container">
+    <ul class="row">
+    {% for brand in brands %}
+        <li class="col-md-2 col-xs-12">
+            <a href="{{ links.search_by_brand ~ brand.name }}">
+                <h4>{{ brand.name }}</h4>
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</nav>

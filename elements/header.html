@@ -1,0 +1,15 @@
+<header class="header container">
+    <div class="row">
+        <div class="logo col-md-2 col-xs-12">
+            <a href="{{ links.home }}" title="{{ store.name }}">
+                <img src="https://avatars0.githubusercontent.com/u/9561870?v=3&s=200" alt="{{ store.name }}">
+            </a>
+        </div>
+        <div class="col-md-8 col-xs-10">
+            {{ _view.element('snippets/search') }}
+        </div>
+        <div class="col-md-2 col-xs-2">
+            {{ _view.element('snippets/cart') }}
+        </div>
+    </div>
+</header>

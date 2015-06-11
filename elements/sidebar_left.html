@@ -1,0 +1,16 @@
+<aside class="sidebar col-md-3">
+
+    {% if 'central_' in pages.current %}
+        {{ _view.element('snippets/menu_central') }}
+    {% else %}
+        {{ _view.element('snippets/categories_list') }}
+    {% endif %}
+
+    {% if banner.side %}
+        <div class="banner banner-side">
+            {{ banner.side }}
+        </div>
+    {% endif %}
+    
+    {{ _view.element('snippets/newsletter') }}
+</aside>

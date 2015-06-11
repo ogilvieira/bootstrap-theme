@@ -1,0 +1,29 @@
+/**
+ * Cart
+ */
+ 
+.cart{
+    display: block;
+    margin-top: 4.5em;
+    
+    .glyphicon-shopping-cart{
+        float: left;
+        font-size: 1.9em;
+        line-height: 1.5em;
+        margin-right: 0.5em;
+    }
+    
+    @media (max-width: 768px) {
+        margin: 0;
+        
+        .cart-title,
+        .cart-values{
+            display: none;
+        }
+        
+        .glyphicon-shopping-cart{
+            font-size: 1.9em;
+            line-height: 1.5em;
+        }
+    }
+}

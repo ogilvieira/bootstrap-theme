@@ -1,0 +1,31 @@
+/**
+ * Banners
+ */
+
+.banner{
+	line-height: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.banner-js{
+    margin: 0;
+    padding: 0;
+    
+    @media (max-width: 768px) {
+        display: none;
+    }
+    
+    .box_skitter{
+        
+        .container_skitter{
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+               -moz-transform: translateX(-50%);
+                -ms-transform: translateX(-50%);
+                 -o-transform: translateX(-50%);
+                    transform: translateX(-50%);
+        }
+        
+    }
+}

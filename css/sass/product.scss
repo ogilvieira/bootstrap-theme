@@ -1,0 +1,27 @@
+/**
+ * Product
+ */
+
+.product{
+    padding-bottom: 2em;
+    padding-top: 2em;
+    
+    .currency{
+        border: none;
+    }
+    
+    .product-payment{
+        
+        >br{
+            display: none;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        text-align: center;
+        
+        img{
+            margin: 0 auto;
+        }
+    }
+}

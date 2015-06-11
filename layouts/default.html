@@ -1,0 +1,111 @@
+{% set showHeader = not getLayout or (getLayout and 'header' in elementsToLoad) %}
+{% set showFooter = not getLayout or (getLayout and 'footer' in elementsToLoad) %}
+{% set showLeft = not getLayout or (getLayout and 'left' in elementsToLoad) %}
+{% set showRight = not getLayout or (getLayout and 'right' in elementsToLoad) %}
+<!doctype html>
+<html lang="pt-br" data-store="{{ store.id }}" class="page-{{ pages.current }}">
+<head>
+    {{ html.charset() }}
+    {{ tray.meta }}
+    <!-- [if IE]<meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+    {{ tray.styles }}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link type="text/css" rel="stylesheet" href="https://images.tcdn.com.br/img/arquivos/identidade_visual/css/sistema.css?{{ utils.assets_version }}" media="all">
+    <link rel="stylesheet" href="{{ themePath }}css/theme.min.css?{{ utils.assets_version }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    {{ tray.scripts }}
+    {{ tray.analytics }}
+    {{ googleTagManager.header(pages.current, tagManagerData) }}
+</head>
+<body>
+    
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.3";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    
+    {{ googleTagManager.top(pages.current, tagManagerData) }}
+
+    {% if showHeader %}
+        
+        {{ _view.element('header') }}
+        
+        {% if pages.current == 'home' and banner.home %}
+            <div class="banner banner-home">
+                {{ banner.home }}
+            </div>
+        {% endif %}
+        
+        {% if pages.current == 'home' and banner.home %}
+            {{ _view.element('snippets/brands') }}
+        {% endif %}
+        
+        {% if banner.extra1 %}
+            <div class="banner banner-extra1">
+                {{ banner.extra1 }}
+            </div>
+        {% endif %}
+
+    {% endif %}
+
+    <article class="article container">
+        
+        {% if showLeft %}
+            {{ _view.element('sidebar_left') }}
+        {% endif %}
+
+        <section class="page-content col-md-9">
+            {{ content_for_layout }}
+        </section>
+
+        {% if showRight %}
+            {{ _view.element('sidebar_right') }}
+        {% endif %}
+        
+    </article>
+    
+    {% if showFooter %}
+        {% if not pages.current == 'home' %}
+            {{ _view.element('snippets/tagcloud') }}
+            {{ _view.element('snippets/history') }}
+        {% endif %}
+
+        {% if banner.bottom %}
+            <div class="banner banner-bottom">
+                {{ banner.bottom }}
+            </div>
+        {% endif %}
+
+        {{ _view.element('footer') }}
+
+        {% if banner.footer %}
+            <div class="banner banner-footer">
+                {{ banner.footer }}
+            </div>
+        {% endif %}
+
+        {% if pages.current == 'home' %}
+            {{ banner.popup ~ banner.floating }}
+        {% endif %}
+
+        {{ _view.element('snippets/credits') }}
+
+    {% endif %}
+
+    {{ googleTagManager.bottom(pages.current, tagManagerData) }}
+    
+    {% if pages.current == 'home' %}
+        <script type="text/javascript" src="https://images.tcdn.com.br/imggeral/loja/view/scripts/jquery.jcarousel.min.js?{{ utils.assets_version }}"></script>
+    {% endif %}
+    <script type="text/javascript" src="https://images.tcdn.com.br/img/arquivos/plugins/jquery.formComplete.js?{{ utils.assets_version }}"></script>
+    <script type="text/javascript" src="{{ themePath }}js/theme.min.js?{{ utils.assets_version }}"></script>
+
+    {{ html.script('dist/application.min.js?' ~ utils.assets_version) }}
+    {{ store.chat }}
+    {{ _view.element('snippets/pageview') }}
+</body>
+</html>

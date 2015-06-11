@@ -1,0 +1,17 @@
+<div class="showcase">
+    {% if products|length > 0 %}
+
+        <div class="product-list overflow">
+            <ul class="row">
+                {% for product in products %}
+
+                    <li class="product col-md-4 col-xs-12">
+                        {{ _view.element('snippets/product', {"product": product}) }}
+                    </li>
+
+                {% endfor %}
+            </ul>
+        </div>
+
+    {% endif %}
+</div>

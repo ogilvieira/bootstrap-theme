@@ -1,0 +1,13 @@
+<a href="{{ links.cart }}" class="cart">
+    <span class="glyphicon glyphicon-shopping-cart"></span>
+    <div class="cart-title">Minha <strong>Cesta</strong></div>
+    <span class="cart-values">
+        <span class="amount">
+            {{ cart.amount }} itens
+        </span>
+        <span> | </span>
+        <span class="price">
+            R$ {{ cart.price }}
+        </span>
+    </span>
+</a>
