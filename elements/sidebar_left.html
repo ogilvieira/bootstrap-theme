@@ -1,19 +1,16 @@
-<aside class="col-sm-3">
-    <div id="dive7rLeftTop"></div>
+<aside class="sidebar col-md-3">
 
     {% if 'central_' in pages.current %}
-        {% element 'snippets/menu_central' %}
+        {{ _view.element('snippets/menu_central') }}
     {% else %}
-        <h3>Categorias</h3>
-        {% element 'snippets/categories_list' %}
+        {{ _view.element('snippets/categories_list') }}
     {% endif %}
-
-    <div id="dive7rLeftMiddle"></div>
-    <div id="dive7rLeftBottom"></div>
 
     {% if banner.side %}
         <div class="banner banner-side">
             {{ banner.side }}
         </div>
     {% endif %}
+    
+    {{ _view.element('snippets/newsletter') }}
 </aside>

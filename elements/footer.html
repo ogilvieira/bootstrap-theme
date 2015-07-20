@@ -1,23 +1,18 @@
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-                <h4 class="footer-title">Loja</h4>
-                {% element 'snippets/categories_list' {'limit': 6} %}
-            </div>
-            <div class="col-sm-3">
-                <h4 class="footer-title">Ajuda</h4>
-                {% element 'snippets/help_links' %}
-            </div>
-            <div class="col-sm-3">
-                <h4 class="footer-title">Siga-nos</h4>
-                {% element 'snippets/contact_links' %}
-            </div>
-            <div class="col-sm-3">
-                <h4 class="footer-title">Inscreva-se</h4>
-                {% element 'snippets/newsletter' %}
-            </div>
+<footer class="footer container">
+    <div class="row">
+        <div class="col-md-3 col-xs-12">
+            <h4 class="footer-title">Ajuda</h4>
+            {{ _view.element('snippets/help_links') }}
         </div>
-        {% element 'snippets/address' %}
+        <div class="col-md-3 col-xs-12">
+            <h4 class="footer-title">Siga-nos</h4>
+            {{ _view.element('snippets/contact_links') }}
+        </div>
+        <div class="col-md-3 col-xs-12">
+            {{ _view.element('snippets/address') }}
+        </div>
+        <div class="col-md-3 col-xs-12">
+            {{ Translation('ag_pageplugin') }}
+        </div>
     </div>
 </footer>

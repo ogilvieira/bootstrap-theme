@@ -1,13 +1,13 @@
-<form role="form" action="{{ links.search }}">
-    <input type="hidden" name="loja" value="{{ store.id }}">
+<form class="search" name="buscaForm" method="get" data-search="suggestion" action="{{ links.search }}">
+    <input type="hidden" name="loja" value="{{ store.id }}" />
     <div class="row">
-        <div class="col-xs-10">
-            <input type="search" placeholder="Buscar na loja" name="palavra_busca" class="text">
-        </div>
-        <div class="col-xs-2">
-            <button class="search-button btn btn-primary">
-                <span class="glyphicon glyphicon-search"></span>
-            </button>
+        <div class="col-md-12 col-xs-12">
+            <div class="input-group">
+                <input class="form-control" data-input="suggestion" placeholder="Digite o que procura..." tabindex="0" type="text" />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">Buscar</button>
+                </span>
+            </div>
         </div>
     </div>
-</form>
+</form><!-- .search -->

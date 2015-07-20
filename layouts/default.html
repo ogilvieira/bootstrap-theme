@@ -1,3 +1,8 @@
+{% set showHeader = not getLayout or (getLayout and 'header' in elementsToLoad) %}
+{% set showFooter = not getLayout or (getLayout and 'footer' in elementsToLoad) %}
+{% set showLeft = not getLayout or (getLayout and 'left' in elementsToLoad) %}
+{% set showRight = not getLayout or (getLayout and 'right' in elementsToLoad) %}
+
 <!doctype html>
 <html lang="pt-br" data-store="{{ store.id }}" class="page-{{ pages.current }}">
 <head>
@@ -85,6 +90,5 @@
     <script src="{{ themePath }}js/theme.min.js?{{ utils.assets_version }}" async></script>
 
     {% element 'snippets/pageview' %}
-
 </body>
 </html>
